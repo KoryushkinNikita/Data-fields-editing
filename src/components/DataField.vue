@@ -5,13 +5,13 @@
         <div class="dataField__value"> {{ dataField.value }} </div>
         <button type="button" class="btn btn-outline-primary" @click="editDataField">Редактировать</button>
     </div>
-    <div v-else-if="isEditingDataField" class="dataField">
+    <form v-else-if="isEditingDataField" class="dataField" onsubmit="return false;">
         <div class="dataField__name"> {{ dataField.name }} </div>
         <div class="dataField__value">
             <input ref="input" type="text" class="form-control" :value="dataField.value">
         </div>
         <button type="button" class="btn btn-outline-primary" @click="finishEditingDataField">Завершить</button>
-    </div>
+    </form>
   </div>
 </template>
 
